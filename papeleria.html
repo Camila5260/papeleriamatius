@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Papelería Matius</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #9b59b6;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #000;
+            color: pink;
+            padding: 20px;
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px #fff;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+            gap: 15px;
+        }
+
+        .btn {
+            background-color: white;
+            border: none;
+            color: black;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #f39c12;
+            transform: scale(1.05);
+        }
+
+   #volver {
+      background-color: black;
+      color: white;
+      margin-top: 10px;
+    }
+        #imageDisplay {
+            margin-top: 30px;
+        }
+
+        #imageDisplay img {
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #333;
+        }
+
+        footer {
+            background-color: #222;
+            color: #bbb;
+            padding: 15px;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>PAPELERÍA MATIUS</header>
+
+<div id="imageDisplay">
+    <img id="main-image" src="Volver al inicio.jpg" alt="Imagen inicial">
+</div>
+
+<div class="container">
+    <button class="btn" onclick="mostrarImagen(this)">Fotocopias B_N y Color</button>
+    <button class="btn" onclick="mostrarImagen(this)">Impresiones</button>
+    <button class="btn" onclick="mostrarImagen(this)">Certificados</button>
+    <button class="btn" onclick="mostrarImagen(this)">Scanner</button>
+    <button class="btn" onclick="mostrarImagen(this)">Artículos Escolares</button>
+    <button class="btn" onclick="mostrarImagen(this)">Marcado y Decoración Útiles</button>
+</div>
+
+
+<footer>© 2025 Papelería Matius - Todos los derechos reservados</footer>
+
+<script>
+    function mostrarImagen(boton) {
+        const texto = boton.innerText.trim();
+        const imagen = `${texto}.jpeg`; // Usa el texto del botón como nombre de la imagen
+        const contenedor = document.getElementById('imageDisplay');
+        contenedor.innerHTML = `<img src="${imagen}" alt="${texto}">`;
+   }
+    function volverInicio() {
+      document.getElementById("main-image").src = "Volver al inicio.jpg";
+    }
+function cambiarImagen(imagen) {
+      document.getElementById("main-image").src = imagen;
+    }
+</script>
+ 
+</body>
+</html>
